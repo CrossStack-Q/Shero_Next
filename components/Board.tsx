@@ -12,7 +12,7 @@ const Board = () => {
       <Droppable droppableId="board" direction="horizontal" type="column">
         {(provided) => (
           <div>
-            {/* rendering blocks */}
+            {/* rendering blocks okay */}
           </div>
         )}
       </Droppable>
