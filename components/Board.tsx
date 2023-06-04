@@ -8,7 +8,7 @@ const Board = () => {
   
 
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
+    <DragDropContext onDragEnd>
       <Droppable droppableId="board" direction="horizontal" type="column">
         {(provided) => (
           <div>
