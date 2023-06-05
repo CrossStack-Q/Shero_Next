@@ -4,6 +4,7 @@
 import { useBoardStore } from "@/store/BoardStore";
 import { useEffect } from "react";
 import { DragDropContext, DropResult, Droppable } from "react-beautiful-dnd";
+import Column from "./Column";
 
 
 const Board = () => {
@@ -14,21 +15,35 @@ const Board = () => {
   }, [getBoard])
 
   console.log(board);
+
+  const handleOnDragEnd = (result: DropResult) => {
+
+
+    const {destination,source,type} = result;
+
+    console.log(destination);
+    console.log(source);
+    console.log(type);
+
+
+  };
   
 
   return (
-    <DragDropContext >
+    <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId="board" direction="horizontal" type="column">
         {(provided) => (
-          <div>
-            {/* rendering blocks okay */}
-            {Array.from(board.columns.entries()).map(([id,column],index) => (
-              <div
-              {...provided.droppableProps}
+          <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto"
+          
+          {...provided.droppableProps}
               ref={provided.innerRef }
               >
+            {/* rendering blocks okay */}
+            {Array.from(board.columns.entries()).map(([id,column],index) => (
+              
                 <Column key={id} id={id} todos={column.todos} index={index} />
-              </div>
+          
             ))}
             Hello
           </div>
