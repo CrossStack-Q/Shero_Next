@@ -53,7 +53,7 @@ function TaskTypeRadioGroup() {
                   ${
                     checked
                       ? `${type.color} bg-opacity-75 text-white`
-                      : "bg-white"
+                      : "bg-light-background dark:bg-dark-background dark:border"
                   }
                     relative flex cursor-pointer rounded-lg px-5 shadow-md focus:outline-none`
                 }
