@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <ThemeProvider attribute="class">
-    <main className="h-[100vh] overflow-hidden" >
+    <main className="md:h-[100vh] overflow-hidden" >
       {/* Header */}
       <Header />
        

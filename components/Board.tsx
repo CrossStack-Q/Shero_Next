@@ -105,7 +105,7 @@ const Board = () => {
 
 
   return (
-    <div className="h-[90vh] m-2 ">
+    <div className="md:h-[90vh] m-2 mt-0">
 
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="column">
