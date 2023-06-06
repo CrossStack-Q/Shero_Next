@@ -12,7 +12,7 @@ const types = [
     color: "bg-red-500",
   },
   {
-    id: "inprogress",
+    id: "inProgress",
     name: "In Progress",
     description: "A task that is currently being worked on",
     color: "bg-yellow-500",
@@ -60,7 +60,7 @@ function TaskTypeRadioGroup() {
               >
                 {({ active, checked }) => (
                   <>
-                    <div className="flex w-full items-center justify-between">
+                    <div className="flex py-4 w-full items-center justify-between">
                       <div className="flex items-center">
                         <div className="text-sm">
                           <RadioGroup.Label

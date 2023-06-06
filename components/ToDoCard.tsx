@@ -1,6 +1,6 @@
 "use client";
 
-// import getUrl from "@/lib/getUrl";
+import getUrl from "@/lib/getUrl";
 import { useBoardStore } from "@/store/BoardStore";
 import { XCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -62,7 +62,7 @@ const ToDoCard: FC<ToDoCardProps> = ({
 
       {/* Add Image */}
       {imageUrl && (
-        <div className="h-full w-full rounded-b-md">
+        <div className="h-full w-full p-4 rounded-b-md">
           <Image
             src={imageUrl}
             alt="Task image"
