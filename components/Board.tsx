@@ -14,8 +14,6 @@ const Board = () => {
     getBoard();
   }, [getBoard])
 
-  console.log(board);
-
   
   const handleOnDragEnd = (result: DropResult) => {
     const { destination, source, type } = result;
@@ -34,7 +32,6 @@ const Board = () => {
       });
     }
   
-  console.log(source.index);
 
   // This ste is needed as the indexes are stored as numbers 0,1,2 etc. instead of id's with DND library
   const columns = Array.from(board.columns);
@@ -90,7 +87,7 @@ const Board = () => {
       // Update DB
       updateTodoInDB(todoMoved,finishCol.id);
 
-      
+
 
 
 
