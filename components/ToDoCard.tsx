@@ -45,7 +45,7 @@ const ToDoCard: FC<ToDoCardProps> = ({
 
   return (
     <div
-      className="bg-white rounded-md space-y-2 drop-shadow-md"
+      className="bg-light-background dark:bg-dark-background rounded-md space-y-2 drop-shadow-md"
       {...draggableProps}
       {...dragHandleProps}
       ref={innerRef}
