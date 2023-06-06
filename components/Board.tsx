@@ -119,7 +119,6 @@ const Board = () => {
                 <Column key={id} id={id} todos={column.todos} index={index} />
           
             ))}
-            Hello
           </div>
         )}
       </Droppable>
