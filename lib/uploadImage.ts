@@ -4,7 +4,7 @@ const uploadImage = async (file: File) => {
   if (!file) return;
 
   const fileUploaded = await storage.createFile(
-    "647b7c344f2d13ea6d69", 
+    "process.env.NEXT_PUBLIC_BUCKET_ID", 
     ID.unique(),
     file
   );
