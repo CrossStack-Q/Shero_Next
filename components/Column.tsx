@@ -2,6 +2,7 @@ import React from 'react'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import ToDoCard from './ToDoCard';
+import { useBoardStore } from '@/store/BoardStore';
 
 type Props = {
     id: TypedColumn,
@@ -19,6 +20,7 @@ const idToColumnText: {
 }
 
 function Column({id, todos , index}: Props) {
+    const [searchString] = useBoardStore((state) => [state.searchString]) ;
   return (
     <Draggable draggableId={id} index={index} >
         {(provided) => (
@@ -36,26 +38,25 @@ function Column({id, todos , index}: Props) {
                         <h2 className="flex justify-between font-bold text-xl p-2">
                   {idToColumnText[id]}
                   <span className="text-gray-500 bg-gray-200 rounded-full px-2 py-1 text-sm font-normal">
-                    {/* {!searchString
+                    {!searchString
                       ? todos.length
                       : todos.filter((todo) =>
                           todo.title
                             .toLocaleLowerCase()
-                            // .includes(searchString.toLocaleLowerCase())
-                        ).length}{" "} */}
-                        {todos.length}
+                            .includes(searchString.toLocaleLowerCase())
+                        ).length}{" "}
                   </span>
                 </h2>
 
                 <div className="space-y-2">
                   {todos.map((todo, index) => {
-                    // if (
-                    //   searchString &&
-                    //   !todo.title
-                    //     .toLowerCase()
-                    //     .includes(searchString.toLocaleLowerCase())
-                    // )
-                    //   return null;
+                    if (
+                      searchString &&
+                      !todo.title
+                        .toLowerCase()
+                        .includes(searchString.toLocaleLowerCase())
+                    )
+                      return null;
 
                     return (
                       <Draggable

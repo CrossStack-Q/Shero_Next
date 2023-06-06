@@ -8,7 +8,7 @@ import Column from "./Column";
 
 
 const Board = () => {
-   const [board,getBoard,setBoardState] = useBoardStore((state) => [state.board,state.getBoard , state.setBoardState]);
+   const [board,getBoard,setBoardState,updateTodoInDB] = useBoardStore((state) => [state.board,state.getBoard , state.setBoardState , state.updateTodoInDB ]);
 
   useEffect(()=> {
     getBoard();
@@ -78,9 +78,30 @@ const Board = () => {
         todos: newTodos,
       };
 
+      newColumns.set(startCol.id,newCol);
+      newColumns.set(finishCol.id, {
+        id: finishCol.id,
+        todos: finishTodos,
+
+      })
+
+
+
+      // Update DB
+      updateTodoInDB(todoMoved,finishCol.id);
+
+      
+
+
+
+
+
+
+      setBoardState({ ...board, columns: newColumns });
+
   
   }
-  
+
 
 }
   
