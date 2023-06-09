@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes"
 import { signIn, signOut, useSession } from "next-auth/react";
 import CollectionId from "@/components/CollectionId";
 
+
 export default function Home() {
 
 
@@ -31,9 +32,7 @@ export default function Home() {
         </>
       ) : (
         <>
-              <p className="text-3xl text-white font-semibold m2">
-                Anurag Sharma
-              </p>
+        
 
               <button onClick={() => signIn()} className="bg-purple-600 m-4 px-4 py-2 text-lg rounded-xl text-white font-bold tracking-widest ">
               Login
