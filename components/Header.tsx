@@ -9,6 +9,9 @@ import { useBoardStore } from "@/store/BoardStore";
 import Button from "./Button";
 // import fetchSuggestion from "@/lib/fetchSuggestion";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
+
 const Header = () => {
 
     const [board, searchString, setSearchString] = useBoardStore((state) => [
@@ -49,7 +52,8 @@ const Header = () => {
 
           {/* Avatar */}
           <Button/>
-          <Avatar name="Anurag Sharma" round size="50" color="#0055D1" />
+          
+          <Avatar className="cursor-pointer" onClick={() => signOut()} name="Anurag Sharma" round size="50" color="#0055D1" />
         </div>
       </div>
 
