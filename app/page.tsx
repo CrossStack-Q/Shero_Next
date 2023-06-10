@@ -6,8 +6,6 @@ import './globals.css'
 import { ThemeProvider } from "next-themes"
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import CollectionId from "@/components/CollectionId";
-
 
 export default function Home() {
 
@@ -28,7 +26,6 @@ export default function Home() {
        {/* Board */}
        
        <Board/>
-       {/* <CollectionId/> */}
         </>
       ) : (
         <>
