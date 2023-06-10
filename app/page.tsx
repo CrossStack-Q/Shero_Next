@@ -28,7 +28,7 @@ export default function Home() {
        {/* Board */}
        
        <Board/>
-       <CollectionId/>
+       {/* <CollectionId/> */}
         </>
       ) : (
         <>
